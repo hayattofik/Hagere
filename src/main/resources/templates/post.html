@@ -1,113 +1,119 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>register</title>
-    <!-- Bootstrap core CSS -->
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <title>ADD POST PAGE</title>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+        h1{
+            background-color: brown;
+            background-image: linear-gradient(green,yellow,red);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color:transparent;
+            display: flex;
+            font-size: 4rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        a{
+            position:fixed;
+            top:50%;
+            right: 0px;
+            background-color: blueviolet;
+            color:cornsilk;
+            font-size: 100%;
+            font-weight: bolder;
+            border: 2px solid transparent  ;
+            padding: 30px 2%;
+            border-radius: 30px;
+        }
+        input{
+            display: inline-block;
+            width:25%;
+            padding: 14px 15px 14px 15px;
+            border: 2px solid burlywood;
+            border-radius: 30px; 
+        }
+        textarea{
+            display: inline-block;
+            width:25%;
+            padding: 14px 15px 14px 15px;
+            border: 2px solid burlywood;
+            border-radius: 30px; 
+        }
+        button{
+            text-transform: uppercase;
+            background-color: blueviolet;
+            color:cornsilk;
+            border: 2px solid transparent  ;
+            padding: 20px 20px ;
+            border-radius: 23px;
+            font-size: 100%;
+            font-weight: bolder;
+        }
+        h3 {
+            text-align:center;
+            background-color: brown;
+            background-image: linear-gradient(green,yellow,red);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color:transparent;
+            font-size: 2rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+          
+        }
+    </style>
 
+</head>
 
-    <div>
+<body>
 
-        <nav class="navbar navbar-expand-md navbar-light bg-black">
-            <a href="#" class="navbar-brand " style="margin-left: 10px;">
+    <div class="container">
+        <div class="col-12">
+            <H1  >HAGERE</H1>
+            <a href="postmain.html" ><button>back</button></a>
+            <hr>
+            <h3 text-align="center" class="text-center">ADD POST :)</h3>
+            <hr>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <form th:action="@{/addP}" method="Post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="name">NAME OF GOVERMENT:</label> <input   type="text " name="name " id="name " th:class="form-control "><br>
 
-                <a class="navbar-brand" href="#"><figure><img class="rounded-circle" style="width:15rem" src="https://blogger.googleusercontent.com/img/a/AVvXsEgN-aUdAds8GtDJaa7zyJkyD-gd-gBHnrV4K_UjVWlC4jYbpL72AorivGaC-pIzSiYq1Zj_bU_vObMoNgopLF9J1IdVaP4_SZcHPZkKgHq59OWEsJAQ604bjMiKBzWRw5vlRahlmQ1YBg03_0UoVjXTYYzBne6ZB3XEGMDkT7bVtfhtyilgP2Q_Uvp7Qw=s320" ></figure></a>
+                                    <label for="desc">PROBLEM DESCRIPTION:</label> <textarea   type="text " name="desc" id="desc " cols="48 " rows="8 " th:class="form-control " placeholder="type your problem description "></textarea><br>
 
+                                    <label>ADD AN IMAGE:</label>
+                                    <div class="custom-file mb-2">
+                                    <input type="file" name="file" class="custom-file-input" id="customFile">
+                                    
+                                  </div>
+                                   
 
+                                    </div>
 
+                                    <button  type="submit " name="name " class="btn btn-primary ">POST</button>
+                                </div>
 
+                            </form>
 
-
-                <div class="text-right" style="background-color: white;">
-                    <button
-                            class="navbar-toggler btn btn-secondary"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#toggleMobileMenu"
-                            aria-bs-controls="toggleMobileMenu"
-                            aria-expanded="false"
-                            aria-lable="Toggel navigation"
-                            style="margin-right: 12px;" >
-                        <span class="navbar-toggler-icon"></span>
-                        Menu</button>
-                </div>
-
-                <div class="collapse navbar-collapse " id="toggleMobileMenu">
-
-
-                    <ul class="navbar-nav text-right"  style="margin-left: 10px; ">
-                        <h1 style ="color: white; margin-right: 5%; font-style: italic;">Alone, me can do little :Together we can can do so much!!</h1>
-
-                        <li>
-                            <a class="nav-link text-white-50" th:href="@{/}">New</a>
-                        </li>
-                        <li>
-                            <a class="nav-link text-white-50" th:href="@{/complains/current}">urgent</a>
-                        </li>
-                        <li>
-                            <a class="nav-link text-white-50" th:href="@{/}">solved</a>
-                        </li>
-                    </ul>
-                </div>
-                <a  class="btn btn-primary mt-2 mb-2 text-right" style="margin-right:10px;" th:href="@{/logout}">Logout</a>
-
-
-
-                <nav>
-            <form class="form-check-inline my-2 my-lg-0">
-                <a class="btn btn-primary my-2 my-sm-1 " type="submit" href="login.html">Login</a>
-
-                <a class="btn btn-primary my-2 my-sm-0 " type="submit" href="register.html">signup</a>
-            </form>
-        </div>
-    </div>
-</nav>
-
-<div class="container p-2">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="text-center">post Form</h3>
-                    <form th:action="@{/post}" th:object="${problem}" method="post">
-
-
-
-
-                        <div class="form-group ">
-                            <label for="organization" >User name</label>
-                            <input type="text" class="form-control"    th:field="${problem.organization}"  aria-describedby="uNhelp" required>
                         </div>
-
-                        <div class="form-group ">
-                            <label for="description" >description</label>
-                            <input type="text" class="form-control"  th:field="${problem.description}"  aria-describedby="emailhelp" required>
-                        </div>
-                        <label for="type" class="typeLabel">Type</label>
-                        <div id="type">
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="type"  th:field="${problem.type}"  value="urgent">
-                                <label class="form-check-label" for="gender">Urgent</label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="type"  th:field="${problem.type}" value="New">
-                                <label class="form-check-label" for="gender">New</label>
-                            </div>
-                        </div>
-
-
-                        <div class="form-group "><input type="submit" name="post" value="Post" class="form-control btn btn-primary"></div>
-
-
-                    </form>
-
+                    </div>
+                    <hr>
                 </div>
             </div>
+
         </div>
     </div>
-</div>
-<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+
+    <script src="js/bootstrap.js "></script>
 </body>
+
 </html>
