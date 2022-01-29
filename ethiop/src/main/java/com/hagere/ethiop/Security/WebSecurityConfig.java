@@ -44,10 +44,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
-    @Override
+  @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/govRegister.html").authenticated().antMatchers("/AdminRegister.html").permitAll()
-                .antMatchers("/post.html").hasRole("" +
+        http.authorizeRequests().antMatchers("/govRegister.html").authenticated().antMatchers("/AdminRegister.html").hasRole("ADMIN")
+                .antMatchers("/main.html").hasRole("USER").antMatchers("/post.html").hasRole("ADMIN" +
                         "GOV")
                 .antMatchers("/").permitAll().and()
                 .formLogin()
