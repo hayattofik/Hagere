@@ -50,16 +50,23 @@ public String login(){
         model.addAttribute("listUsers", listUsers);
 
         return "users";}
-    @PostMapping("/register")
-    public String processRegister(User user) {
+  @PostMapping("/register")
+    public String processRegister(@Valid  @ModelAttribute ("user") User user, BindingResult bindingResult) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
 
         userRepository.save(user);
+        if (bindingResult.hasErrors()) {
 
-        return "login";
+            return "register";
+        } else {
+            return  "login";
+        }
+
+
     }
+
 
 
 
