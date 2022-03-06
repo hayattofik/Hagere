@@ -13,10 +13,3 @@ Hagere is a website that allows the public to interact with the government in or
 7.We will use Mysql as a data store because it is fast, easy to maintain security, and has good reporting features. Furthermore, it is free, and there are numerous tutorials available to assist us.
 8.we have planned to use Spring boot for the RESTAPI.
 
-
-                                                  #Group members                 #ID
-                                                  Hayat Tofik                 UGR/2987/12
-                                                  Mihret Desalegn             UGR/1089/12
-                                                  Melat Mesele                UGR/9429/12    
-                                                   Roza Kassa                 UGR/2571/12
-                                                   Selamawit siferh           UGR/1822/12
